@@ -1,0 +1,1 @@
+Путь к php.ini: "C:\Users\Николай\Desktop\OpenServer\userdata\config\PHP_7.4_php.ini"
