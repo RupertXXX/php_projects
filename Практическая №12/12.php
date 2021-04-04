@@ -1,71 +1,70 @@
 <?php 
-	class FirstArr {
-		public $FirstArr = array(4, 8, 15, 16, 23, 42, 14, 18, 25, 26, 33);
+	class First {
+		public $First = array(1, 4, 8, 10, 13, 15, 16, 61, 62, 70, 100);
 		public $min = PHP_INT_MAX;
 		public $max = -(PHP_INT_MAX);
-		public $sum = 0;
 		function SumArr() {
 			$sum = $this->sum;
-			for($i = 0; $i < count($this->FirstArr); $i++){
-				if (is_int($this->FirstArr[$i]) == true) {
-					$sum += $this->FirstArr[$i];
+			for($i = 0; $i < count($this->First); $i++){
+				if (is_int($this->First[$i]) == true) {
+					$sum += $this->First[$i];
 				}
-				elseif (is_string($this->FirstArr[$i]) == true) {
-					$sum += strlen($this->FirstArr[$i]);
+				elseif (is_string($this->First[$i]) == true) {
+					$sum += strlen($this->First[$i]);
 				}
 			}
 			return $sum;
 		}
-				
-		function Mini() {
+		
+		function Miny() {
 			$min = $this->min;
-			for($i = 0; $i < count($this->FirstArr); $i++){
-				if (is_int($this->FirstArr[$i]) == true) {
+			for($i = 0; $i < count($this->First); $i++){
+				if (is_int($this->First[$i]) == true) {
 					if (is_int($min) == true)
-						if ($min > $this->FirstArr[$i]) $min = $this->FirstArr[$i];
+						if ($min > $this->First[$i]) $min = $this->First[$i];
 					if (is_string($min) == true)
-						if (strlen($min) > $this->FirstArr[$i]) $min = $this->FirstArr[$i];
+						if (strlen($min) > $this->First[$i]) $min = $this->First[$i];
 				}
-				if (is_string($this->FirstArr[$i]) == true) {
+				if (is_string($this->First[$i]) == true) {
 					if (is_int($min) == true)
-						if ($min > strlen($this->FirstArr[$i])) $min = $this->FirstArr[$i];
+						if ($min > strlen($this->First[$i])) $min = $this->First[$i];
 					if (is_string($min) == true)
-						if (strlen($min) > strlen($this->FirstArr[$i])) $min = $this->FirstArr[$i];
+						if (strlen($min) > strlen($this->First[$i])) $min = $this->First[$i];
 				}
 			}
 			return $min;
 		}
 		
-		function Maxi() {
+		function Maxy() {
 			$max = $this->max;
-			for($i = 0; $i < count($this->FirstArr); $i++){
-				if (is_int($this->FirstArr[$i]) == true) {
+			for($i = 0; $i < count($this->First); $i++){
+				if (is_int($this->First[$i]) == true) {
 					if (is_int($max) == true)
-						if ($max < $this->FirstArr[$i]) $max = $this->FirstArr[$i];
+						if ($max < $this->First[$i]) $max = $this->First[$i];
 					if (is_string($max) == true)
-						if (strlen($max) < $this->FirstArr[$i]) $max = $this->FirstArr[$i];
+						if (strlen($max) < $this->First[$i]) $max = $this->First[$i];
 				}
-				if (is_string($this->FirstArr[$i]) == true) {
+				if (is_string($this->First[$i]) == true) {
 					if (is_int($max) == true)
-						if ($max < strlen($this->FirstArr[$i])) $max = $this->FirstArr[$i];
+						if ($max < strlen($this->First[$i])) $max = $this->First[$i];
 					if (is_string($max) == true)
-						if (strlen($max) < strlen($this->FirstArr[$i])) $max = $this->FirstArr[$i];
+						if (strlen($max) < strlen($this->First[$i])) $max = $this->First[$i];
 				}
 			}
 			return $max;
 		}
 	}
-//--------------------------------------------------------------------------------------------------------
-	class SecondArr extends FirstArr {
 	
-		public $SecondArr = array( array(42, 69, 228), array(3, 7, 100), array(1, 2, 3), array(1, 2, 3), array(69, 69, 69), array(4, 2, 0),
-			array(-10, 0, 10), array(10, 15, 20), array(20, 25, 30), array(77, 77, 77), array(420, 228, 69), );
+	class Second extends First {
+	
+		public $Second = array( array(22, 81, 124), array(6, 12, 500), array(3, 4, 12), array(2, 6, 8), array(30, 32, 110), array(6, 1, 8),
+			array(32, -7, 12), array(19, 25, 10), array(15, 17, 11), array(44, 22, 44), array(12, 82, 55) );
 		function SumArr() {
 			$sum = $this->sum;
-			foreach ($this->SecondArr as $unit) {
+			foreach ($this->Second as $unit) {
 				if (is_array($unit) == true) {
-					$val = new FirstArr();
-					$val->FirstArr = $unit;
+					$val = new First();
+					$val->First = $unit;
 					$sum += $val->SumArr();
 				}
 				if (is_int($unit) == true)
@@ -76,14 +75,14 @@
 			return $sum;
 		}
 		
-		function Mini() {
+		function Miny() {
 			$min = $this->min;
-			foreach ($this->SecondArr as $unit) {
+			foreach ($this->Second as $unit) {
 				
 				if (is_array($unit) == true) {
-					$val = new FirstArr();
-					$val->FirstArr = $unit;
-					$unit = $val->Mini();
+					$val = new First();
+					$val->First = $unit;
+					$unit = $val->Miny();
 					if (is_int($min) == true)
 						if ($min > $unit) $min = $unit;
 					if (is_string($min) == true)
@@ -106,13 +105,13 @@
 		}
 
 		
-		function Maxi() {
+		function Maxy() {
 			$max = $this->max;
-			foreach ($this->SecondArr as $unit) {
+			foreach ($this->Second as $unit) {
 				if (is_array($unit) == true) {
-					$val = new FirstArr();
-					$val->FirstArr = $unit;
-					$unit = $val->Maxi();
+					$val = new First();
+					$val->First = $unit;
+					$unit = $val->Maxy();
 					if (is_int($max) == true)
 						if ($max < $unit) $max = $unit;
 					if (is_string($max) == true)
@@ -133,14 +132,14 @@
 			}
 			return $max;
 		}	
-		function SumMini() {
+		function SumMiny() {
 			$sum = $this->sum;
 			$min = $this->min;
-			foreach ($this->SecondArr as $unit) {
+			foreach ($this->Second as $unit) {
 				if (is_array($unit) == true) {
-					$val = new FirstArr();
-					$val->FirstArr = $unit;
-					$unit = $val->Mini();
+					$val = new First();
+					$val->First = $unit;
+					$unit = $val->Miny();
 					if ($min > $unit) {
 						$min = $unit;
 					}
@@ -151,14 +150,14 @@
 			return $sum;
 		}
 		
-		function SumMaxi() {
+		function SumMaxy() {
 			$sum = $this->sum;
 			$max = $this->max;
-			foreach ($this->SecondArr as $unit) {
+			foreach ($this->Second as $unit) {
 				if (is_array($unit) == true) {
-					$val = new FirstArr();
-					$val->FirstArr = $unit;
-					$unit = $val->Maxi();
+					$val = new First();
+					$val->First = $unit;
+					$unit = $val->Maxy();
 					if ($max <= $unit) {
 						$max = $unit;
 					}
@@ -170,11 +169,11 @@
 		}
 	}
 	
-	$f = new FirstArr;
+	$f = new First;
 	echo "Одномерный массив: ";
-	echo "</br>--Сумма элементов: " . $f->SumArr() . ";</br>--Минимальный элемент: ". $f->Mini() . ";</br>--Максимальный элемент: " . $f->Maxi() . ";</br>";
-	$f = new SecondArr;
+	echo "</br>--Сумма элементов: " . $f->SumArr() . ";</br>--Минимальный элемент: ". $f->Miny() . ";</br>--Максимальный элемент: " . $f->Maxy() . ";</br>";
+	$f = new Second;
 	echo "</br>Двумерный массив: ";
-	echo "</br>--Сумма элементов: " . $f->SumArr() . ";</br>--Минимальный элемент: " . $f->Mini() . ";</br>--Максимальный элемент: " . $f->Maxi() . ";";
-	echo "</br>--Сумма минимальных значений: " . $f->SumMini() . ";</br>--Сумма максимальных значений: " . $f->SumMaxi() . ";</br>";
+	echo "</br>--Сумма элементов: " . $f->SumArr() . ";</br>--Минимальный элемент: " . $f->Miny() . ";</br>--Максимальный элемент: " . $f->Maxy() . ";";
+	echo "</br>--Сумма минимальных значений: " . $f->SumMiny() . ";</br>--Сумма максимальных значений: " . $f->SumMaxy() . ";</br>";
 ?> 
