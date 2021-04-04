@@ -1,0 +1,24 @@
+.container_page{
+	margin: 50px 0 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#users{
+	width: 400px;
+	border: 1px solid #333333;
+	margin: 0 0 20px 0;
+}
+#inputlog, #title{
+	width: 400px;
+	margin: 10px 0 0 0;
+}
+.users{
+	position: absolute;
+}
+.permission{
+	position: relative;
+}
+#input_check{
+	cursor: pointer;
+}

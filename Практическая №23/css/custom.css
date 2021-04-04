@@ -1,0 +1,20 @@
+.main{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.form_is{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.first_tex{
+	margin: 20px 20px 0 0;
+	outline: none;
+}
+.second_tex{
+	margin: 20px 20px 0 0;
+	outline: none;
+}
